@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
-<meta charset='utf-8' />
+<meta charset='utf-8'/>
 <title>Title Blog</title>
 </head>
   
@@ -12,7 +13,41 @@
 ]]></b:skin>
 
 <body>
-<b:section id="halo" class="halo"></b:section>
-<p>Halo Dunia</p>
+
+<div id='wrapper'>
+  
+<!-- ================================= HEADER ================================= -->
+<header id='header-wrapper'><b:section class='header' id='header' maxwidgets='1'>
+<b:widget id='Header1' locked='true' title='Ganteng id (Header)' type='Header'></b:widget>
+</b:section>
+</header>
+<!-- ================================= END HEADER ================================= -->
+  
+<div class='clearfix'/>
+
+<!-- ================================= CONTENT / MAIN ================================= -->  
+<aside id='content-wrapper'>
+<b:section class='main' id='main'>
+  <b:widget id='Blog1' locked='true' title='Posting Blog' type='Blog'></b:widget>
+</b:section>
+</aside>
+<!-- ================================= END CONTENT / MAIN ================================= -->  
+ 
+<!-- ================================= SIDEBAR ================================= -->    
+<aside id='sidebar-wrapper'>
+<b:section class='sidebar' id='sidebar' showaddelement='yes'></b:section>
+</aside>
+<!-- ================================= END SIDEBAR ================================= -->    
+  
+<div class='clearfix'/>
+
+<!-- ================================= FOOTER ================================= -->      
+<footer id='footer-wrapper'>
+<b:section class='footer' id='footer' showaddelement='yes'></b:section>
+</footer>
+<!-- ================================= END FOOTER ================================= -->      
+  
+</div>  
+  
 </body>
 </html>
