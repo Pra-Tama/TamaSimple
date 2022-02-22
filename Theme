@@ -4,6 +4,13 @@
 <meta charset='utf-8' />
 <title>Title Blog</title>
 </head>
+  
+<b:skin><![CDATA[
+   /*CSS di bawah sini...*/
+
+
+]]></b:skin>
+
 <body>
 <p>Halo Dunia</p>
 </body>
