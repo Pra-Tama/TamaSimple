@@ -13,7 +13,9 @@
   
 <b:skin><![CDATA[
 
-#wrapper {background: #fff; width: 90%; padding: 20px; margin: 20px auto;}
+body{background-color: lightgray;}
+
+#wrapper {background: lightgray; width: 90%; padding: 20px; margin: 20px auto;}
 #header-wrapper {background:#fff; width: 100%; height:auto; margin: 0 auto; border:1px solid #eaeaea;}
 .header {text-align:center}
 #content-wrapper {background: transparent; width:65%; float:left; border:1px solid #eaeaea; margin:10px 0;}
@@ -24,7 +26,7 @@
 
 
 .post-outer {margin:30px 20px 50px 0;}
-.post-footer{background:#eee;}
+.post-footer{background: rgba(192,192,192,0.3);}
 .post-title.entry-title a{font-size:24px; text-decoration:none;}
 .post-footer span a, .post-share-buttons a{margin:5px;}
 .post-body.entry-content{padding:0px 0px 25px 10px;}
@@ -147,25 +149,30 @@ function removeHtmlTag(strx,chop){if(strx.indexOf("<")!=-1){var s = strx.split("
 <b:section class='main' id='main'>
   <b:widget id='Blog1' locked='true' title='Postingan Blog' type='Blog' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='showDateHeader'>true</b:widget-setting>
-      <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
+      <b:widget-setting name='commentLabel'>comments</b:widget-setting>
       <b:widget-setting name='showShareButtons'>false</b:widget-setting>
-      <b:widget-setting name='showCommentLink'>true</b:widget-setting>
-      <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
-      <b:widget-setting name='showAuthor'>true</b:widget-setting>
+      <b:widget-setting name='authorLabel'>Posted by</b:widget-setting>
       <b:widget-setting name='disableGooglePlusShare'>true</b:widget-setting>
-      <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
       <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
-      <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+      <b:widget-setting name='timestampLabel'>at</b:widget-setting>
       <b:widget-setting name='reactionsLabel'/>
       <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
       <b:widget-setting name='style.layout'>1x1</b:widget-setting>
-      <b:widget-setting name='showLabels'>true</b:widget-setting>
-      <b:widget-setting name='showLocation'>true</b:widget-setting>
+      <b:widget-setting name='showLocation'>false</b:widget-setting>
       <b:widget-setting name='showTimestamp'>true</b:widget-setting>
       <b:widget-setting name='postsPerAd'>1</b:widget-setting>
-      <b:widget-setting name='showBacklinks'>false</b:widget-setting>
       <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+      <b:widget-setting name='showDateHeader'>true</b:widget-setting>
+      <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
+      <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+      <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
+      <b:widget-setting name='postLocationLabel'>Location:</b:widget-setting>
+      <b:widget-setting name='showAuthor'>true</b:widget-setting>
+      <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
+      <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+      <b:widget-setting name='showLabels'>true</b:widget-setting>
+      <b:widget-setting name='postLabelsLabel'>Labels:</b:widget-setting>
+      <b:widget-setting name='showBacklinks'>false</b:widget-setting>
       <b:widget-setting name='showInlineAds'>false</b:widget-setting>
       <b:widget-setting name='showReactions'>false</b:widget-setting>
     </b:widget-settings>
