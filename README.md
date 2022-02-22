@@ -11,3 +11,4 @@ Setup intsructions: -
 "TamaSimple-V.01"
 - 2 Column Layout
 - Menghilangkan "Langganan : Entri (Atom)"
+- Merubah warna body & wrapper "lightgray"
