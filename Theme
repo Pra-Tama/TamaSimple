@@ -145,7 +145,7 @@ function removeHtmlTag(strx,chop){if(strx.indexOf("<")!=-1){var s = strx.split("
 <!-- ================================= CONTENT / MAIN ================================= -->  
 <aside id='content-wrapper'>
 <b:section class='main' id='main'>
-  <b:widget id='Blog1' locked='true' title='Postingan Blog' type='Blog'>
+  <b:widget id='Blog1' locked='true' title='Postingan Blog' type='Blog' version='1'>
     <b:widget-settings>
       <b:widget-setting name='showDateHeader'>true</b:widget-setting>
       <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
@@ -377,9 +377,7 @@ function removeHtmlTag(strx,chop){if(strx.indexOf("<")!=-1){var s = strx.split("
     <b:includable id='feedLinks'>
   <b:if cond='data:blog.pageType != &quot;item&quot;'> <!-- Blog feed links -->
     <b:if cond='data:feedLinks'>
-      <div class='blog-feeds'>
-        <b:include data='feedLinks' name='feedLinksBody'/>
-      </div>
+ 
     </b:if>
 
   <b:else/> <!--Post feed links -->
