@@ -6,6 +6,11 @@
 <title>Title Blog</title>
 </head>
   
+<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+<b:if cond='data:blog.pageType != &quot;item&quot;'>
+</b:if>
+</b:if>
+  
 <b:skin><![CDATA[
 
 #wrapper {background: #fff; width: 90%; padding: 20px; margin: 20px auto;}
@@ -17,7 +22,37 @@
 
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: &quot; &quot;; clear: both; height: 0;}
 
+
+.post-outer {margin:30px 20px 50px 0;}
+.post-footer{background:#eee;}
+.post-title.entry-title a{font-size:24px; text-decoration:none;}
+.post-footer span a, .post-share-buttons a{margin:5px;}
+.post-body.entry-content{padding:0px 0px 25px 10px;}
+.comments{padding:25px 0 10px 10px;}
+
+
+.post-body{text-align:justify;}
+.post-body img{max-width:none;width:auto;}
+.read-more{float:left; padding-top: 10px;}
+.read-more a{ color:#0457A9 !important;background:transparent; font:bold 13px Arial;padding:5px;}
+.read-more a:hover{color:#FFF !important; background:#0457A9;}
+.pic{border: 10px solid #fff;float:left;height:165px;width:200px;margin-right: 20px;margin-bottom:10px;overflow:hidden;box-shadow: 5px 5px 5px #ebebeb;}
+.grow img{height:165px;width:270px;}
+
+
 ]]></b:skin>
+  
+  
+<script type='text/javascript'>
+var thumbnail_mode = &quot;yes&quot;;
+summary_noimg = 400;
+summary_img = 400;
+img_thumb_height = 165;
+img_thumb_width = 280;
+</script>
+<script type='text/javascript'>//<![CDATA[
+function removeHtmlTag(strx,chop){if(strx.indexOf("<")!=-1){var s = strx.split("<");for(var i=0;i<s.length;i++){if(s[i].indexOf(">")!=-1){s[i] = s[i].substring(s[i].indexOf(">")+1,s[i].length);}}strx = s.join("");}chop = (chop < strx.length-1) ? chop : strx.length-2;while(strx.charAt(chop-1)!=' ' && strx.indexOf(' ',chop)!=-1) chop++;strx = strx.substring(0,chop-1);return strx+'...';}function createSummaryAndThumb(pID){var div = document.getElementById(pID);var imgtag = "";var img = div.getElementsByTagName("img");var summ = summary_noimg;if(thumbnail_mode == "yes"){if(img.length>=1){imgtag = '<div class="grow pic"><img src="'+img[0].src+'" width="'+img_thumb_width+'px" height="'+img_thumb_height+'px"/></div>';summ = summary_img;}}var summary = imgtag + '<div>' + removeHtmlTag(div.innerHTML,summ) + '</div>';div.innerHTML = summary;}
+//]]></script>  
 
 <body>
 
@@ -482,7 +517,23 @@
           </div>
 
           <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id' itemprop='articleBody'>
-            <data:post.body/>
+            <!-- Custom for readmore -->
+<!-- data:post.body/ -->
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<data:post.body/>
+<b:else/>
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+<data:post.body/>
+<b:else/>
+<div expr:id='&quot;summary&quot; + data:post.id'><data:post.body/></div>
+<script type='text/javascript'> createSummaryAndThumb(&quot;summary<data:post.id/>&quot;);
+</script>
+	 <div class='read-more'>
+	 <a expr:href='data:post.url'>Baca Selengkapnya &#187;</a>
+	 </div>
+</b:if>
+</b:if>
+<!-- Custom for readmore -->
             <div style='clear: both;'/> <!-- clear for photos floats -->
           </div>
 
@@ -589,7 +640,23 @@
 
     <!-- Then use the post body as the schema.org description, for good G+/FB snippeting. -->
     <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id' expr:itemprop='(data:blog.metaDescription ? &quot;&quot; : &quot;description &quot;) + &quot;articleBody&quot;'>
-      <data:post.body/>
+      <!-- Custom for readmore -->
+<!-- data:post.body/ -->
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<data:post.body/>
+<b:else/>
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+<data:post.body/>
+<b:else/>
+<div expr:id='&quot;summary&quot; + data:post.id'><data:post.body/></div>
+<script type='text/javascript'> createSummaryAndThumb(&quot;summary<data:post.id/>&quot;);
+</script>
+	 <div class='read-more'>
+	 <a expr:href='data:post.url'>Baca Selengkapnya &#187;</a>
+	 </div>
+</b:if>
+</b:if>
+<!-- Custom for readmore -->
       <div style='clear: both;'/> <!-- clear for photos floats -->
     </div>
 
