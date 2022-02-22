@@ -12,6 +12,7 @@
 ]]></b:skin>
 
 <body>
+<b:section id="halo" class="halo"></b:section>
 <p>Halo Dunia</p>
 </body>
 </html>
